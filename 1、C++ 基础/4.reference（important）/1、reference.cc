@@ -138,6 +138,7 @@ void test3()
 }
 #endif
 
+// 尽量不要使用堆空间，可能发生内存泄漏问题，如果一定要返回堆空间的引用，必须要有内存自动回收机制
 int &getHeapData()
 {
     int *pInt = new int(200);
@@ -165,63 +166,3 @@ int main()
     test4();
     return 0;
 }
-
-#if 0
-
-
-// 指针传递
-// 直观性不好
-void swap(int *px, int *py) // int x=a,int y=4;
-{
-    int tmp = *px;
-    *px = *py;
-    *py = tmp;
-}
-
-//     可以作为函数的返回类型
-void test2()
-{
-    int a = 3, b = 4;
-    cout << "交换之前a=" << a << ",b=" << b << endl;
-    swap(&a, &b);
-    cout << "交换之前a=" << a << ",b=" << b << endl;
-}
-
-// 指针
-//     可以作为函数的参数
-
-
-void swap(int x, int y) // int x=a,int y=4;
-{
-    int tmp = x;
-    x = y;
-    y = tmp;
-}
-
-
-// 引用传递
-// 操作实体与操作引用是一样的效果
-int &func()
-{
-    int number = 10;
-    return number;
-}
-
-// 不要返回局部变量引用
-
-int arr[5] = {1, 2, 3, 4, 5};
-int &getIndex(int idx)
-{
-    return arr[idx];
-}
-
-// 函数的返回结果使用引用的前提：实体的生命周期大于函数的生命周期
-
-int &getHeapData()
-{
-    int *pInt = new int(200);
-    return *pInt;
-}
-#endif
-
-// 尽量不要使用堆空间，可能发生内存泄漏问题，如果一定要返回堆空间的引用，需要自动完成内存释放
