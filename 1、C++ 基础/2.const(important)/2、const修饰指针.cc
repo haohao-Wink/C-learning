@@ -78,6 +78,3 @@ int main()
     test2();
     return 0;
 }
-
-// const * const
-// 既不可以改变指针所指内容也不可以改变指针指向
