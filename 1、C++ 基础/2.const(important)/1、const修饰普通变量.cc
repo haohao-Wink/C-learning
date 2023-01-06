@@ -45,28 +45,6 @@ int main()
 }
 
 /*
-void test()
-{
-    int a;
-    a = 20;
-    // ngcc快捷注释多行，u回退
-
-    用于const修饰的变量成为常量
-    常量在定义的时候，必须初始化
-
-    const int number = 10;
-    // 常量不能进行赋值
-
-    cout << "hello world" << endl;
-}
-
-int main()
-{
-    test();
-    return 0;
-}
-
-
     补充：
             wimplus快捷键：ngcc快捷注释多行，u回退
 */
