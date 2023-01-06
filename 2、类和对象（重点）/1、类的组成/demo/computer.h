@@ -1,14 +1,14 @@
-#ifndef __COMPUTER
+#ifndef __COMPUTER_H__
+#define __COMPUTER_H__
 
 #include <iostream>
 using std ::cout;
 using std ::endl;
 
+// 类的声明
 class Computer
 {
-
 public:
-    // 不能使用内联函数
     void setBrand(const char *name);
     void setPrice(float price);
     void print();

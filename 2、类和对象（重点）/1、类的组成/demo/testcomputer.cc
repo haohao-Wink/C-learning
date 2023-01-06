@@ -1,11 +1,10 @@
 #include "computer.h"
-#include <iostream>
+
 using std ::cout;
 using std ::endl;
 
 void test()
 {
-    int a;
     // 用类创建对象
     Computer com;
 
@@ -17,6 +16,7 @@ void test()
 
 int main()
 {
-    test();
+    // test();
+    cout << "hello world";
     return 0;
 }

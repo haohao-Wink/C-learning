@@ -1,8 +1,5 @@
 #include "computer.h"
-#include <iostream>
-
-using std::cout;
-using std::endl;
+#include <string.h>
 
 // 类名和作用域限定符表示
 void Computer::setBrand(const char *name)
