@@ -2,6 +2,8 @@
 using std::cout;
 using std ::endl;
 
+// 由构造函数进行初始化
+
 class Point
 {
 public:
@@ -27,6 +29,7 @@ public:
     }
 
 #endif
+
     // 构造函数可以进行重载
 
     Point(int ix, int iy)
@@ -62,4 +65,23 @@ int main()
 {
     test();
     return 0;
+}
+
+// 拷贝调用函数的调用时机：当用一个已经存在的对象去初始化另一个新对象的时候
+
+// 当实参和形参都是对象，进行实参和形参结合的时候
+
+void func2(Point pt)
+{
+    pt.print();
+}
+
+void test2()
+{
+    Point pt1(3, 4);
+    cout << "pt1=";
+    pt1.print();
+
+    cout << endl;
+    func2(pt1);
 }

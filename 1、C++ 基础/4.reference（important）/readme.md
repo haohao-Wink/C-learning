@@ -42,7 +42,8 @@
     void swap(int *pa,int *pb){
         
         int t=*pa;
-        *pa=*pb;                                             *pb=t;
+        *pa=*pb;                                         
+        *pb=t;
                                                                 }
 
     //引用作为参数
