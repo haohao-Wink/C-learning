@@ -9,12 +9,18 @@ using std ::endl;
 class Computer
 {
 public:
+    Computer(const char *name, float price);
+
+    Computer(const Computer &rhs);
+
     void setBrand(const char *name);
     void setPrice(float price);
     void print();
 
+    ~Computer();
+
 private:
-    char *name;
+    char *_name;
     float _price;
 };
 

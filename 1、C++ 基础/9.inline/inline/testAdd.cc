@@ -1,6 +1,8 @@
 // 函数测试
 
-#include "add.h"    //自定义使用""
+#include "add.h" //自定义使用""
+#include "add.cc"
+
 #include <iostream> //系统库里的使用<>
 
 using std::cout;

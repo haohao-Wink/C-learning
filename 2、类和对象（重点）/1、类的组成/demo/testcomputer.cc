@@ -1,4 +1,7 @@
 #include "computer.h"
+#include "computer.cc"
+
+#include <iostream>
 
 using std ::cout;
 using std ::endl;
@@ -16,7 +19,6 @@ void test()
 
 int main()
 {
-    // test();
-    cout << "hello world";
+    test();
     return 0;
 }
