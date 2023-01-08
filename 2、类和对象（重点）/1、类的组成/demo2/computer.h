@@ -13,15 +13,34 @@ public:
 
     Computer(const Computer &rhs);
 
+    Computer &operator=(const Computer &rhs);
+
     void setBrand(const char *name);
     void setPrice(float price);
     void print();
 
+    // 函数重载
+    void print() const;
+
+    static void printTotalPrice();
+
     ~Computer();
 
 private:
+    // 内存对齐
     char *_name;
     float _price;
+
+    static float _totalPrice; // 总价
+    /*
+        static静态数据成员，只能在定义的时候进行初始化
+        静态数据成员不属于对象本身，不占用对象大小空间
+        位于静态区，静态数据成员被类创建的对象共享
+    */
 };
+
+#if 0 // 如果放在头文件，会导致多次定义
+float Computer::_totalPrice = 0;
+#endif
 
 #endif

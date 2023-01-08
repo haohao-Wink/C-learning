@@ -52,14 +52,84 @@ void test2()
     com2.print();
 }
 
+void test3()
+{
+    Computer com1("lenovo", 5300);
+    cout << "com1:" << endl;
+    com1.print();
+
+    cout << endl;
+    Computer com2("thinkpad", 6600);
+    cout << "com2:" << endl;
+    com2.print();
+
+    cout << endl;
+
+    com2 = com1;
+
+    cout << "com1:" << endl;
+    com1.print();
+
+    cout << "com2:" << endl;
+    com2.print();
+}
+
+void test4()
+{
+    cout << "sizeof(computer)=" << sizeof(Computer) << endl;
+
+    cout << "total price before:";
+
+    /*
+        静态成员函数既可以用类名加作用域限定符的形式调用，也可以使用类名加点的形式调用
+    */
+
+    // 如果没有对象，通过类名和作用域限定符调用函数，但是必须保证函数为静态成员函数
+    Computer::printTotalPrice();
+
+    Computer com1("lenovo", 5300);
+    cout << "com1:" << endl;
+    com1.print();
+
+    cout << "buy first one total price=";
+    com1.printTotalPrice();
+
+    cout << endl;
+    Computer com2("thinkpad", 6600);
+    cout << "com2:" << endl;
+    com2.print();
+
+    cout << "buy second one total price=";
+    com2.printTotalPrice();
+} // end of test4
+
+void test5()
+{
+    // 默认情况下，非const对象调用非const版本的成员函数，const对象调用const版本的成员函数
+
+    Computer com1("lenovo", 5300);
+    cout << "com1:" << endl;
+    com1.print();
+
+    cout << endl;
+    // const int num=10;
+    const Computer com2("thinkpad", 6600);
+    cout << "com2:" << endl;
+    com2.print();
+}
+
 int main()
 {
-    cout << "enter main..." << endl;
+    // cout << "enter main..." << endl;
 
 #if 0   
     test();
 #endif
 
-    test2();
+    // test2();
+
+    // test3();
+    // test4();
+    test5();
     return 0;
 }
