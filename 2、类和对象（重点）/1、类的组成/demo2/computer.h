@@ -20,7 +20,7 @@ public:
     void print();
 
     // 函数重载
-    void print() const;
+    void print() const; // 建议先写const版本的成员函数
 
     static void printTotalPrice();
 
@@ -44,3 +44,5 @@ float Computer::_totalPrice = 0;
 #endif
 
 #endif
+
+// 静态成员函数与const版本的成员函数都是在讨论this指针的问题

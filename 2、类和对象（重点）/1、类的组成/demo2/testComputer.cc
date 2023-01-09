@@ -106,6 +106,7 @@ void test4()
 void test5()
 {
     // 默认情况下，非const对象调用非const版本的成员函数，const对象调用const版本的成员函数
+    // 非const对象也可以调用const版本的成员函数,const对象不能调用非const版本的成员函数
 
     Computer com1("lenovo", 5300);
     cout << "com1:" << endl;
