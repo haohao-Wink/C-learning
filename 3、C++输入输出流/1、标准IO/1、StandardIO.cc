@@ -57,7 +57,8 @@ void test2()
         else if (cin.fail())
         {
             cin.clear(); // 重置流的状态
-            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // ignore调用方式
             cout << "please cin int!!" << endl;
         }
         else
@@ -73,3 +74,9 @@ int main()
     test2();
     return 0;
 }
+
+/*
+    程序重点指令：
+        Ctrl c//异常中断
+        ctrl d//正常退出
+*/
