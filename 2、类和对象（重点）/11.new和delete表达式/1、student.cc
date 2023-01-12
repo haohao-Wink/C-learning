@@ -1,6 +1,9 @@
-#include <iostream>
+
+
 #include <string.h>
 #include <stdlib.h> //调用malloc
+
+#include <iostream>
 
 using std ::cout;
 using std::endl;
@@ -9,6 +12,7 @@ using std::endl;
 // 相较于在类内部，需要多执行一次operator new和operator delete
 // 全局创建一次，在构造函数中也需要创建一次
 // 在全局删除一次，在析构函数中也需要删除一次
+
 void *operator new(size_t sz) // 全局中，针对所有new表达式
 {
     cout << "void *operator new(size_t)" << endl;
@@ -89,7 +93,6 @@ private:
 
 int main()
 {
-
     Student *pstu = new Student(4201, "lili");
     pstu->print();
 
