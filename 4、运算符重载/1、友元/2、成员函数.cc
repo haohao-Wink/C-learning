@@ -12,6 +12,9 @@ class Point; // 类的前向声明
     友元不受访问权限控制
     友元关系不能传递
     友元是单向的
+    友元关系不能被继承
+
+    友元关系最好谨慎使用，容易破坏封装性！！！！！
 */
 
 class Line
@@ -67,8 +70,8 @@ void Line::distance(Point &pt, int ix, int iy)
 }
 #endif
 
-#if 0友元关系是单向的
-void setLine(Line &line, int iz)
+#if 0//友元关系是单向的
+void Line::setLine(Line &line, int iz)
 {
     line.iz = iz; // error
 }

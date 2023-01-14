@@ -4,10 +4,11 @@
 using std::cout;
 using std ::endl;
 
+//  友元,让函数访问类内的数据成员
+
 class Point
 {
     // 友元不受访问权限的控制
-    //  友元,让函数访问类内的数据成员
     friend double distance(const Point &lhs, const Point &rhs);
 
 public:
