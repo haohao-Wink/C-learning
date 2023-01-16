@@ -9,7 +9,7 @@ public:
     Data(int data = 0)
         : _data(data)
     {
-        cout << "Data(int =0" << endl;
+        cout << "Data(int =0)" << endl;
     }
 
     int getData() const
@@ -51,6 +51,11 @@ public:
         return _pdata;
     }
 
+    Data &operator*()
+    {
+        return *_pdata;
+    }
+
 private:
     Data *_pdata;
 };
@@ -82,3 +87,25 @@ public:
 private:
     SecondLayer *_psl;
 };
+
+void test()
+{
+    // 智能指针的雏形
+    SecondLayer sl(new Data(10)); // 栈对象
+    cout << "s1->getData()=" << sl->getData() << endl;
+    // sl -> getData() ====> sl.operator -> ()->getData()
+    cout << "(*sl).getData()=" << (*sl).getData() << endl;
+    // (*sl).getData() ====>sl.operator*().getData()
+
+    cout << endl
+         << endl;
+    ThirdLayer tl1(new SecondLayer(new Data(30))); // 栈对象
+    cout << "tl1->getData()=" << tl1->getData() << endl;
+    // tl1->getData() ====>tl1.operator->().operator->()->getData() << endl;
+}
+
+int main()
+{
+    test();
+    return 0;
+}
