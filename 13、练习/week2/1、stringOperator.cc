@@ -92,11 +92,45 @@ public:
         t._pstr = new char[strlen(_pstr) + 1]();
         strcpy(t._pstr, _pstr);
         delete[] _pstr;
+
         _pstr = nullptr;
         _pstr = new char[strlen(rhs._pstr) + strlen(t._pstr) + 1]();
         strcpy(_pstr, t._pstr);
         strcat(_pstr, rhs._pstr);
         return *this;
+    }
+
+    // s1+="hello"
+    String &operator+=(const char *pstr)
+    {
+        cout << "String &operator+=(const char *)" << endl;
+        String t(pstr);
+        *this += t;
+
+        return *this;
+    }
+
+    // const String s1("hello");
+    // s1[0]
+    char &operator[](std::size_t index) // index>0
+    {
+        if (index < size())
+        {
+            return _pstr[index];
+        }
+        else
+        {
+            static char nullchar = '\0';
+            return nullchar;
+        }
+    }
+
+    const char &operator[](std ::size_t index) const
+    {
+        if (index < size())
+        {
+            return _pstr[index];
+        }
     }
 
 private:
