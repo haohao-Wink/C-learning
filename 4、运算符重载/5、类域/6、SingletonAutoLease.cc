@@ -51,7 +51,7 @@ private:
 //  Singleton *Singleton::_pInstance = nullptr; // 初始化静态数据成员
 
 // 饿汉模式
-Singleton *Singleton::_pInstance = getInstance(); // 防止死锁
+Singleton *Singleton::_pInstance = Singleton::getInstance(); // 防止死锁
 
 int main()
 {

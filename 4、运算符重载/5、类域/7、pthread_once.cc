@@ -1,6 +1,7 @@
+/*
 #include <iostream>
 #include <stdlib.h>
-#include <pthread.h>
+#include <pthread.h> // win下没有对应模块，需要在Linux环境
 
 using std::cout;
 using std::endl;
@@ -69,3 +70,5 @@ int main()
 
     return 0;
 }
+
+*/
