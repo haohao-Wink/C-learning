@@ -4,6 +4,8 @@ using std::cout;
 using std::endl;
 
 // 声明的纯虚函数类称为抽象类，抽象类不能创建对象
+// 抽象类是作为接口使用
+
 class Base
 {
 public:
@@ -57,6 +59,7 @@ void test()
     pderived->show();
     pderived->print();
 
+    // 引用
     Base &ref = derived2;
 
     // 声明过类型之后，就可以定义类和指针
