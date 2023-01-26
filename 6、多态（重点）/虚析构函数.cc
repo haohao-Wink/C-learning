@@ -4,6 +4,8 @@
 using std::cout;
 using std::endl;
 
+// 虚析构函数解决内存泄漏问题
+
 class Base
 {
 public:
